@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: i99063721-netizen/local-divorce-guide
+  branch: main
+  base_url: https://local-divorce-guide.netlify.app
+  auth_endpoint: api/auth
+
+locale: ko
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "지역글"
+    folder: "content/posts"
+    create: true
+    slug: "{{fields.province}}-{{fields.city}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "광역지역 영문", name: "province", widget: "string", hint: "예: seoul"}
+      - {label: "지역 영문", name: "city", widget: "string", hint: "예: gwanak"}
+      - {label: "지역 표시명", name: "region", widget: "string", hint: "예: 서울 관악구"}
+      - {label: "설명", name: "description", widget: "string"}
+      - {label: "본문", name: "body", widget: "markdown"}
