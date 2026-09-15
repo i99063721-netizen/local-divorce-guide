@@ -2,8 +2,6 @@ backend:
   name: github
   repo: i99063721-netizen/local-divorce-guide
   branch: main
-  base_url: https://local-divorce-guide.netlify.app
-  auth_endpoint: api/auth
 
 locale: ko
 media_folder: "assets/uploads"
