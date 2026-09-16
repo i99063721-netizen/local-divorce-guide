@@ -1,6 +1,7 @@
 const fs=require('fs'),path=require('path'),matter=require('gray-matter'),{marked}=require('marked');
 const root=__dirname,dist=path.join(root,'dist'); fs.rmSync(dist,{recursive:true,force:true}); fs.mkdirSync(dist,{recursive:true});
 function cp(src,dst){if(!fs.existsSync(src))return;fs.cpSync(src,dst,{recursive:true})} cp(path.join(root,'assets'),path.join(dist,'assets'));cp(path.join(root,'admin'),path.join(dist,'admin'));
+cp(path.join(root,'navere28ad78a069bd82513e6fd95700b75ab.html'),path.join(dist,'navere28ad78a069bd82513e6fd95700b75ab.html'));
 const base='https://local-divorce-guide.netlify.app';
 marked.setOptions({breaks:true});
 function shell(title,desc,body,canonical){return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><meta name="description" content="${desc}"><link rel="canonical" href="${canonical}"><meta property="og:url" content="${canonical}"><link rel="stylesheet" href="/assets/style.css"></head><body><header><div class="wrap"><a class="brand" href="/">지역이혼정보안내</a></div></header>${body}<footer><div class="wrap">지역별 이혼 절차와 준비사항 안내</div></footer></body></html>`}
